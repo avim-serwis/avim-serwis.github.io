@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{ page.title }} - AVIM-Serwis - wynajem apartamentów, sprzątanie, koszenie, Zakopane</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="ramka_glowna">
+    <div id="naglowek">
+        <img src="/obrazki/logo.png" id="logo" alt="AVIM-Serwis"><img src="/obrazki/slogany.png" id="slogany" alt="">
+    </div>
+    <div id="menu">
+        <div class="menu">
+            <a href="/" class="menu">O nas</a>
+        </div>
+        <div class="menu">
+            <a href="/uslugi" class="menu">Oferowane usługi</a>
+        </div>
+        <div class="menu">
+            <a href="/kontakt" class="menu">Kontakt</a>
+        </div>
+    </div>
+    <div id="tresc">
+        {{ content }}
+    </div>
+    <div id="stopka">
+    &copy; {{ site.time | date: '%Y' }} AVIM-Serwis<br>
+</div>
+</div>
+</body>
+</html>
