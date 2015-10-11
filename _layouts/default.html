@@ -1,33 +1,67 @@
+---
+navigation:
+- text: O nas
+  url: /
+- text: Oferowane usługi
+  url: /uslugi/
+- text: Kontakt
+  url: /kontakt/
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{{ page.title }} - AVIM-Serwis - wynajem apartamentów, sprzątanie, koszenie, Zakopane</title>
-    <link href="/style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AVIM-Serwis - {{ page.title }} - wynajem apartamentów, sprzątanie, koszenie - Zakopane i okolice</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-<div id="ramka_glowna">
-    <div id="naglowek">
-        <img src="/obrazki/logo.png" id="logo" alt="AVIM-Serwis"><img src="/obrazki/slogany.png" id="slogany" alt="">
-    </div>
-    <div id="menu">
-        <div class="menu">
-            <a href="/" class="menu">O nas</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-xs-12">
+            <img src="/images/logo.png" class="img-responsive center-block" alt="AVIM-Serwis">
         </div>
-        <div class="menu">
-            <a href="/uslugi" class="menu">Oferowane usługi</a>
-        </div>
-        <div class="menu">
-            <a href="/kontakt" class="menu">Kontakt</a>
+        <div class="col-md-5 hidden-xs hidden-sm">
+            <div class="row">
+                <div class="col-md-12 slogan">Sprzątanie</div>
+                <div class="col-md-12 slogan">Utrzymywanie terenów zielonych</div>
+                <div class="col-md-12 slogan">Odśnieżanie</div>
+            </div>
         </div>
     </div>
-    <div id="tresc">
-        {{ content }}
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="menu">
+                <ul class="nav nav-pills">
+                    {% assign url = page.url|remove:'index.html' %}
+                    {% for link in page.navigation %}
+                    <li {% if url == link.url %}class="active"{% endif %}>
+                        <a href="{{link.url}}">{{link.text}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div id="stopka">
-    &copy; {{ site.time | date: '%Y' }} AVIM-Serwis<br>
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="content">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center footer-note">
+            &copy; {{ site.time | date: '%Y' }} AVIM-Serwis
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -1,0 +1,55 @@
+---
+---
+
+$site-boxes-vertical-margin: 4px;
+$slogan-margin: 15px;
+$border-color: #747474;
+
+@mixin site-box {
+	background-color: #FFF;
+	border-radius: 6px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: $border-color;
+	margin: $site-boxes-vertical-margin 0 $site-boxes-vertical-margin 0;
+}
+
+body {
+	background: url(/images/background.jpg);
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+}
+
+nav.menu {
+	@include site-box;
+	padding: 2px;
+}
+
+div.content {
+	@include site-box;
+	padding: 25px;
+}
+
+div.slogan {
+	font-size: 18px;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #000;
+	margin: $slogan-margin;
+}
+
+div.footer-note {
+	font-size: 10px;
+	color: #000;
+}
+
+h1 {
+	font-size: 24px;
+	margin: 10px 0 30px 0;
+}
+
+div.float-img {
+	float: left;
+	margin: 7px 20px 20px 0;
+	border: solid;
+	border-color: $border-color;
+}
