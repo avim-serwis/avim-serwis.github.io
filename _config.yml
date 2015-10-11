@@ -1,5 +1,10 @@
 exclude:
     - bootstrap-config.json
     - Gemfile
+compress_html:
+    clippings: all
+    comments: all
+    ignore:
+        envs: [local]
 sass:
     style: compressed
