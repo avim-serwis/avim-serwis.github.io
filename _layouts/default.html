@@ -41,12 +41,15 @@ navigation:
         <div class="col-md-12">
             <nav class="menu">
                 <ul class="nav nav-pills">
-                    {% assign url = page.url|remove:'index.html' %}
-                    {% for link in page.navigation %}
-                    <li {% if url == link.url %}class="active"{% endif %}>
-                        <a href="{{link.url}}">{{link.text}}</a>
+                    <li>
+                        <a href="/">O nas</a>
                     </li>
-                    {% endfor %}
+                    <li>
+                        <a href="/uslugi/">Oferowane usługi</a>
+                    </li>
+                    <li>
+                        <a href="/kontakt/">Kontakt</a>
+                    </li>
                 </ul>
             </nav>
         </div>
